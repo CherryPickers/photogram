@@ -6,11 +6,11 @@
 
 <script>
 	export default {
-
+		name: 'appheader'
 	}
-	
+
 </script>
-	
+
 <style>
 	.logo {
 	  background-color: rgb(245,245,245);
