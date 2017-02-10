@@ -7,8 +7,12 @@ import VueResource from 'vue-resource'
 
 import Auth from './packages/auth/Auth.js'
 
+import Header from './components/Header.vue'
+
 Vue.use(VueResource)
 Vue.use(Auth)
+
+Vue.component('app-header', Header);
 
 Router.beforeEach(
 	(to, from, next) => {

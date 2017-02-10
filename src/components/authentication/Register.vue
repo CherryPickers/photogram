@@ -1,4 +1,5 @@
 <template>
+<div class="register">
 	<div class="signUp">
 		<input class="signUp__username" type="text" v-model="email" placeholder="Email">
 		<input class="signUp__password" type="text" v-model="password" placeholder="Password">
@@ -9,6 +10,7 @@
 		<button class="signUp__button">Sign up</button>
 		<span class="forgotPass">Already have Account? LOG IN</span>
 	</div>
+</div>
 </template>
 
 <script>
