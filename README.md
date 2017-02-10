@@ -1,4 +1,4 @@
-# photogrm
+# photogram
 
 > simple app
 
