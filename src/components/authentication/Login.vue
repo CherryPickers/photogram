@@ -1,16 +1,22 @@
 <template>
 	<div class="logIn">
-		<input class="logIn__username" type="text" name="email" v-model="email" placeholder="Email/Username" v-validate="'required|email'">
-		<br>
-		<span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
-		<br>
-		<input class="logIn__password" type="password" name="password" v-model="password" placeholder="Password" v-validate="'required|min:8|verify_password'">
-		<br>
-		<span v-show="errors.has('password')" class="help is-danger">{{ errors.first('password') }}</span>
 
+		<form @submit.prevent="validateBeforeSubmit">
+			<input type="email" name="email" v-model="form.email" placeholder="Email/Username" v-validate="'required|email'" class="logIn__username">
+			<span v-show="errors.has('email')" class="help is-danger">
+				{{ errors.first('email') }}
+			</span>
 
-		<button @click="loginUser" class="logIn__button">Log in</button>
-		<span class="forgotPass">Forgot Password?</span>
+			<br>
+
+			<input type="password" name="password" v-model="form.password" placeholder="Password" v-validate="'required|min:8|verify_password'" class="logIn__password">
+			<span v-show="errors.has('password')" class="help is-danger">
+				{{ errors.first('password') }}
+			</span>
+
+			<button type="submit" class="logIn__button">Log in</button>
+			<span class="forgotPass">Forgot Password?</span>
+		</form>
 	</div>
 </template>
 
@@ -18,23 +24,33 @@
 	export default {
 		data() {
 			return {
-				email: '',
-				password: ''
+				form: {
+					email: '',
+					password: ''
+				}
 			}
 		},
 		methods: {
+			validateBeforeSubmit(e) {
+        		this.$validator.validateAll();
+		        if (!this.errors.any()) {
+		            this.submitForm();
+					this.loginUser();
+		        }
+      		},
+			submitForm(){
+				this.formSubmitted = true
+			},
 			loginUser() {
 				var dataUser = {
-					email: this.email,
-					password: this.password
+					email: this.form.email,
+					password: this.form.password
 				}
 				this.$http.post("http://lar.com/api/api/v1/auth/login", dataUser)
-
 				.then(response => {
 			    	this.$auth.setToken(response.body.token)
 			    	this.$router.push("/home")
 			  	})
-
 			}
 		}
 	}
@@ -76,6 +92,10 @@
 	display: block;
 	text-align: left;
 	color: rgb(149,152,154);
+}
+.is-danger {
+	font-size: 1em;
+	color: red;
 }
 
 </style>

@@ -37,7 +37,7 @@ Router.beforeEach(
 )
 
 Validator.extend('verify_password', {
-  getMessage: field => `The password must contain at least: 1 uppercase letter, 1 lowercase letter, 1 number, and one special character (E.g. , . _ & ? etc)`,
+  getMessage: field => `minimum 8 characters at least 1 number, 1 special character, 1 uppercase letter`,
   validate: value => {
     var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
     return strongRegex.test(value);
