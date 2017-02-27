@@ -1,7 +1,14 @@
 <template>
 	<div class="logIn">
-		<input class="logIn__username" type="text" name="email" v-model="email" placeholder="Email/Username">
-		<input class="logIn__password" type="password" name="password" v-model="password" placeholder="Password">
+		<input class="logIn__username" type="text" name="email" v-model="email" placeholder="Email/Username" v-validate="'required|email'">
+		<br>
+		<span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
+		<br>
+		<input class="logIn__password" type="password" name="password" v-model="password" placeholder="Password" v-validate="'required|min:8|verify_password'">
+		<br>
+		<span v-show="errors.has('password')" class="help is-danger">{{ errors.first('password') }}</span>
+
+
 		<button @click="loginUser" class="logIn__button">Log in</button>
 		<span class="forgotPass">Forgot Password?</span>
 	</div>
