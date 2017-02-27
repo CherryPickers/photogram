@@ -2,10 +2,10 @@
 <div class="register">
 	<div class="signUp">
 		<input class="signUp__username" type="text" v-model="email" placeholder="Email">
-		<input class="signUp__password" type="text" v-model="password" placeholder="Password">
-		<input class="signUp__password" type="text" v-model="password" placeholder="Confirm Password">
-		<input class="signUp__username" type="text" v-model="email" placeholder="Profil Name">
-		<input class="signUp__username" type="text" v-model="email" placeholder="Username">
+		<input class="signUp__password" type="password" v-model="password" placeholder="Password">
+		<input class="signUp__password" type="password" v-model="confirmPassword" placeholder="Confirm Password">
+		<input class="signUp__username" type="text" v-model="name" placeholder="Profil Name">
+		<input class="signUp__username" type="text" v-model="username" placeholder="Username">
 		<span class="forgotPass">I accept to the Terms & Privacy Policy</span>
 		<button class="signUp__button">Sign up</button>
 		<span class="forgotPass">Already have Account? LOG IN</span>
@@ -18,7 +18,10 @@
 			data() {
 				return {
 					email: '',
-					password: ''
+					password: '',
+					confirmPassword: '',
+					name: '',
+					username: ''
 				}
 			}
 		}

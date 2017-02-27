@@ -24,7 +24,7 @@
 			</router-link>
 		</li>
 		<li>
-			<router-link to="home">
+			<router-link to="register">
 			<svg version="1.1" x="0px" y="0px"
 	 viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve" width="20px" height="20px">
 				<g>
@@ -43,6 +43,7 @@
 			</router-link>
 		</li>
 		<li>
+		<router-link to="home">
 			<svg version="1.1" x="0px" y="0px"
 	 width="20px" height="20px" viewBox="0 0 548.165 548.165" style="enable-background:new 0 0 548.165 548.165;"
 	 xml:space="preserve">
@@ -65,8 +66,10 @@
 			</g>
 
 			</svg>
+			</router-link>
 		</li>
 		<li>
+		<router-link to="home">
 			<svg version="1.1" x="0px" y="0px"
 	 width="20px" height="20px" viewBox="0 0 511.63 511.63" style="enable-background:new 0 0 511.63 511.63;"
 	 xml:space="preserve">
@@ -84,6 +87,7 @@
 						c3.046,0,4.575,1.53,4.575,4.569C260.392,487.268,258.862,488.787,255.816,488.787z"/>
 				</g>
 			</svg>
+			</router-link>
 		</li>
 	</ul>
     	<h1 class="logo">Photogram.</h1>
