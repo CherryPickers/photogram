@@ -1,0 +1,28 @@
+///------------------------------------
+//    #SETTINGS
+//	  Settings or variables
+//    Globally available
+//    They don`t produce any CSS
+//------------------------------------
+
+///
+// CONTENTS
+//
+// GLOBAL VARIABLES
+// Breakpoints...............Globally available variables.
+// Colors....................Globally available variables.
+// Fonts.....................Globally available variables.
+// Links.....................Globally available variables.
+// Forms.....................Globally available variables.
+// Images....................Globally available variables.
+
+
+
+
+
+@import "settings.breakpoints";
+@import "settings.colors";
+//@import "settings.font";
+@import "settings.links";
+@import "settings.forms";
+@import "settings.images";

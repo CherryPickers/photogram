@@ -17,15 +17,8 @@
 
 // -----------------------------------------------------------------------------
 // LIB folder houses scss mixins and functions
-//@import 'lib/mixins/all';
+@import 'lib/mixins/all';
 
 
 //------ALL SETTINGS
-//@import 'settings/all';
-
-
-// kako globalno f-je
-// kako podeliti npr header - app(think site):header pa sta ima
-// navigation kako logiku kasnije iskoristiina drugim projektima
-// da li mogu router-link-active da zamneik klasom active
-// kako asinhrono
+@import 'settings/all';

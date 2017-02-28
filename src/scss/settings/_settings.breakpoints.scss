@@ -1,0 +1,28 @@
+///------------------------------------
+//    #SETTINGS
+//------------------------------------
+
+// Globaly available variables
+
+
+
+
+
+//-------------------------
+//    #Breakpoints
+//    Global default settings
+//	  for breakpoints
+// 	  These variables use lib/mixins/breakpoints
+//-------------------------
+//
+// .simple-usage {
+//   @include breakpoint (phone) {
+//		stuff
+// 	}
+// }
+//
+//
+
+$desktop   : 1025px;
+$tablet    : 1024px;
+$phone     : 640px;
