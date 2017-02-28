@@ -2,14 +2,14 @@
 	<div class="logIn">
 
 		<form @submit.prevent="validateBeforeSubmit">
-			<input type="email" name="email" v-model="form.email" placeholder="Email/Username" v-validate="'required|email'" class="logIn__username">
+			<input type="email" name="email" placeholder="Email/Username" v-model="login.email" v-validate="'required|email'" class="logIn__username">
 			<span v-show="errors.has('email')" class="help is-danger">
 				{{ errors.first('email') }}
 			</span>
 
 			<br>
 
-			<input type="password" name="password" v-model="form.password" placeholder="Password" v-validate="'required|min:8|verify_password'" class="logIn__password">
+			<input type="password" name="password" placeholder="Password" v-model="login.password" v-validate="'required|min:8|verify_password'" class="logIn__password">
 			<span v-show="errors.has('password')" class="help is-danger">
 				{{ errors.first('password') }}
 			</span>
@@ -17,6 +17,8 @@
 			<button type="submit" class="logIn__button">Log in</button>
 			<span class="forgotPass">Forgot Password?</span>
 		</form>
+
+		<router-link to="register"><span>Register</span></router-link>
 	</div>
 </template>
 
@@ -24,7 +26,7 @@
 	export default {
 		data() {
 			return {
-				form: {
+				login: {
 					email: '',
 					password: ''
 				}
@@ -38,13 +40,13 @@
 					this.loginUser();
 		        }
       		},
-			submitForm(){
+			submitForm() {
 				this.formSubmitted = true
 			},
 			loginUser() {
 				var dataUser = {
-					email: this.form.email,
-					password: this.form.password
+					email: this.login.email,
+					password: this.login.password
 				}
 				this.$http.post("http://lar.com/api/api/v1/auth/login", dataUser)
 				.then(response => {

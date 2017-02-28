@@ -1,4 +1,4 @@
-export default function(Vue){
+export default function(Vue) {
 	Vue.auth = {
 		// set token
 
@@ -10,7 +10,7 @@ export default function(Vue){
 		getToken() {
 			var token = localStorage.getItem('token')
 			if(! token)
-				return null	
+				return null
 			else {
 				return token;
 			}

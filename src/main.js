@@ -36,6 +36,7 @@ Router.beforeEach(
 	}
 )
 
+//client form validation
 Validator.extend('verify_password', {
   getMessage: field => `minimum 8 characters at least 1 number, 1 special character, 1 uppercase letter`,
   validate: value => {
