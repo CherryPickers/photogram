@@ -1,0 +1,24 @@
+///------------------------------------
+//    #MAIN
+//------------------------------------
+
+
+// This file imports entire default styles.
+// You can choose what to import by uncomment it.
+// This styles do not apply on components
+// Styles for components are pulled from its own folder
+
+// -----------------------------------------------------------------------------
+// Core files must be included and must come first.
+// They help us to make consistence across browsers, building CSS layouts
+// easier and remove built-in browser styling.
+// Core files are the first files that will be compiled in css.
+@import "core/all";
+
+// -----------------------------------------------------------------------------
+// LIB folder houses scss mixins and functions
+@import 'lib/mixins/all';
+
+
+//------ALL SETTINGS
+@import 'settings/all';

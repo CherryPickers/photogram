@@ -1,0 +1,27 @@
+///------------------------------------
+//    #MIXINS
+//------------------------------------
+
+// Global mixin available to the entire project.
+
+
+
+
+//-------------------------
+//    #Transform
+//    Default is 'translate(-50%, -50%)'
+//-------------------------
+//
+// .simple-usage {
+//    @include transform (rotate(10deg));
+// }
+//
+
+@mixin transform ($params: translate(-50%, -50%)) {
+    -webkit-transform: $params;
+     -khtml-transform: $params;
+       -moz-transform: $params;
+        -ms-transform: $params;
+         -o-transform: $params;
+            transform: $params;
+}
