@@ -6,6 +6,14 @@
 </template>
 
 <script>
+	export default {
+		methods: {
+			logOut() {
+				this.$auth.destroyToken()
+					this.$router.push("/")
+			}
+		}
+	}
 
 </script>
 
