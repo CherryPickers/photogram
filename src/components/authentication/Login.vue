@@ -34,7 +34,7 @@
 		},
 		methods: {
 			validateBeforeSubmit(e) {
-        		this.$validator.validateAll();
+				this.$validator.validateAll();
 		        if (!this.errors.any()) {
 		            this.submitForm();
 					this.loginUser();
@@ -44,15 +44,15 @@
 				this.formSubmitted = true
 			},
 			loginUser() {
-				var dataUser = {
-					email: this.login.email,
-					password: this.login.password
-				}
-				this.$http.post("http://lar.com/api/api/v1/auth/login", dataUser)
-				.then(response => {
-			    	this.$auth.setToken(response.body.token)
-			    	this.$router.push("/home")
-			  	})
+					var dataUser = {
+						email: this.login.email,
+						password: this.login.password
+					}
+					this.$http.post("http://lar.com/api/api/v1/auth/login", dataUser)
+					.then(response => {
+				    	this.$auth.setToken(response.body.token)
+				    	this.$router.push("/home")
+				  	})
 			}
 		}
 	}
