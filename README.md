@@ -35,7 +35,9 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 - [Babel](https://babeljs.io/) - JSX trinspiler; JS compiler
 - [SCSS](http://sass-lang.com/) - used as a stylesheet language
 - [Vue.js](https://vuejs.org/) - clean and minimal structure and the ability to easily upgrade and implement any future components
+
 > Vue features:
+
 - [Vue-router](https://github.com/vuejs/vue-router) - for all the routes
 - [Axios](https://github.com/mzabriskie/axios) - for HTTP requests
 - [Sweetalert2](https://github.com/limonte/sweetalert2) - popup boxes
