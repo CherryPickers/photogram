@@ -52,7 +52,9 @@
 					.then(response => {
 				    	this.$auth.setToken(response.body.token)
 				    	this.$router.push("/home")
+				    	console.log(response)
 				  	})
+				  
 			}
 		}
 	}
