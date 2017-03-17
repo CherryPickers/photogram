@@ -38,15 +38,15 @@ Router.beforeEach(
 
 //client form validation
 Validator.extend('verify_password', {
-  getMessage: field => `minimum 8 characters at least 1 number, 1 special character, 1 uppercase letter`,
-  validate: value => {
-    var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
-    return strongRegex.test(value);
-  }
+	getMessage: field => `minimum 8 characters at least 1 number, 1 special character, 1 uppercase letter`,
+	validate: value => {
+		var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+		return strongRegex.test(value);
+	}
 });
 
 new Vue({
-  el: '#app',
-  render: h => h(App),
-  router: Router
+	el: '#app',
+	render: h => h(App),
+	router: Router
 })
