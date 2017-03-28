@@ -40,7 +40,7 @@
 						email: this.login.email,
 						password: this.login.password
 					}
-					this.$http.post("http://lar.com/api/api/v1/auth/login", dataUser)
+					this.$http.post("http://larapi.com/api/auth/login", dataUser)
 					.then(response => { //if success
 				    	this.$auth.setToken(response.body.token)
 				    	this.$router.push("/home")

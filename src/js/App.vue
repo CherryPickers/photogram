@@ -9,5 +9,5 @@
 </script>
 
 <style lang="scss">
-  @import "scss/default.scss";
+  @import "../scss/default.scss";
 </style>

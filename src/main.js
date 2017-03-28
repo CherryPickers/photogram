@@ -1,14 +1,14 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from './js/App.vue'
 
-import Router from './routes.js'
+import Router from './js/helpers/routes.js'
 
 import VueResource from 'vue-resource'
 import VeeValidate, { Validator } from 'vee-validate';
 
-import Auth from './packages/auth/Auth.js'
+import Auth from './js/auth/Auth.js'
 
-import Header from './components/Header.vue'
+import Header from './js/components/Header.vue'
 
 Vue.use(VueResource)
 Vue.use(Auth)

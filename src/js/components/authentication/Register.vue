@@ -49,7 +49,7 @@
 							password: this.register.password,
 							name: this.register.name
 						}
-						this.$http.post("http://lar.com/api/api/v1/auth/register", dataUser)
+						this.$http.post("http://larapi.com/api/auth/register", dataUser)
 						.then(response => {
 							this.$auth.setToken(response.body.token)
 							this.$router.push("/home")
