@@ -12,9 +12,10 @@
 			<!--Reenter Password-->
 			<input type="password" name="reenteredPassword" placeholder="Confirm Password" v-model="register.reenteredPassword" v-validate="'required'" class="signUp__password">
 			<span v-show="fields.failed('password')" class="help is-danger">{{ errors.first('password') }}</span>
+			<!--Name-->
+			<input type="text" name="name" placeholder="Profile Name" v-model="register.name" class="signUp__username">
 			<!--Username-->
-			<input type="text" name="registerName" placeholder="Profile Name" v-model="register.profilename" class="signUp__username">
-			<input type="text" name="registerUsername" placeholder="Username" v-model="register.username" class="signUp__username">
+			<input type="text" name="username" placeholder="Username" v-model="register.username" class="signUp__username">
 			<span class="help is-danger" v-text="register.errors"></span>
 			<!--  Static-->
 			<span class="forgotPass">Forget Password?</span>
@@ -32,12 +33,12 @@
 			data() {
 				return {
 					register: {
-						email: '',
-						password: '',
+						email:             '',
+						password:          '',
 						reenteredPassword: '',
-						profilename: '',
-						username: '',
-						errors: ''
+						name:              '',
+						username:          '',
+						errors:          '',
 					}
 				}
 			},
@@ -45,9 +46,10 @@
 				registerUser() {
 					if (!this.errors.any() && this.$validator.validateAll()) {
 						var dataUser = {
-							email: this.register.email,
+							email:    this.register.email,
 							password: this.register.password,
-							name: this.register.name
+							name:     this.register.name,
+							username: this.register.username
 						}
 						this.$http.post("http://larapi.com/api/auth/register", dataUser)
 						.then(response => {
@@ -55,7 +57,6 @@
 							this.$router.push("/home")
 						}).catch(function (data) { //if there is an error
 							this.register.errors = 'Invalid email or password'; //write into errors field
-							console.log('server-validate');
 						})
 					}
 				}

@@ -6,7 +6,7 @@ import Router from './js/helpers/routes.js'
 import VueResource from 'vue-resource'
 import VeeValidate, { Validator } from 'vee-validate';
 
-import Auth from './js/auth/Auth.js'
+import Auth from './js/functions/Auth.js'
 
 import Header from './js/components/Header.vue'
 

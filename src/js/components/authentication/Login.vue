@@ -15,7 +15,7 @@
 			<span class="help is-danger" v-text="login.errors"></span>
 			<!--  Submit-->
 			<button type="submit" class="logIn__button">Log in</button>
-			<span class="forgotPass">Forgot Password?</span>
+			<span class="forgotPass">Forget Password?</span>
 			<router-link to="register"><span>Register</span></router-link>
 		</form>
 
@@ -27,9 +27,9 @@
 		data() {
 			return {
 				login: {
-					email: '',
+					email:    '',
 					password: '',
-					errors: ''
+					errors:   ''
 				}
 			}
 		},
