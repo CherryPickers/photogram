@@ -1,28 +1,28 @@
 <template>
 <div class="register">
 
-	<div class="signUp">
+	<div class="form">
 		<form @submit.prevent="registerUser">
 			<!--Email-->
-			<input type="text" name="email" placeholder="Email" v-model="register.email" v-validate="'required|email'" class="signUp__username">
+			<input type="text" name="email" placeholder="Email" v-model="register.email" v-validate="'required|email'" class="form__input">
 			<span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
 			<!--Password-->
-			<input type="password" name="password" placeholder="Password" v-model="register.password" v-validate="'required|min:8|verify_password|confirmed:reenteredPassword'" class="signUp__password">
+			<input type="password" name="password" placeholder="Password" v-model="register.password" v-validate="'required|min:8|verify_password|confirmed:reenteredPassword'" class="form__input">
 			<span v-show="errors.has('password')" class="help is-danger">{{ errors.first('password') }}</span>
 			<!--Reenter Password-->
-			<input type="password" name="reenteredPassword" placeholder="Confirm Password" v-model="register.reenteredPassword" v-validate="'required'" class="signUp__password">
+			<input type="password" name="reenteredPassword" placeholder="Confirm Password" v-model="register.reenteredPassword" v-validate="'required'" class="form__input">
 			<span v-show="fields.failed('password')" class="help is-danger">{{ errors.first('password') }}</span>
 			<!--Name-->
-			<input type="text" name="name" placeholder="Profile Name" v-model="register.name" class="signUp__username">
+			<input type="text" name="name" placeholder="Profile Name" v-model="register.name" class="form__input">
 			<!--Username-->
-			<input type="text" name="username" placeholder="Username" v-model="register.username" class="signUp__username">
+			<input type="text" name="username" placeholder="Username" v-model="register.username" class="form__input">
 			<span class="help is-danger" v-text="register.errors"></span>
 			<!--  Static-->
-			<span class="forgotPass">Forget Password?</span>
-			<button class="signUp__button">Sign up</button>
-			<span class="forgotPass">Already have the account? <router-link to="/">LOG IN</router-link></span>
+			<span class="form__forgot">Forgot Password?</span>
+			<button class="btn form__btn">Sign up</button>
+			<span class="form__forgot">Already have the account? <router-link to="/" class="form__link">LOG IN</router-link></span>
 			<br>
-			<span class="forgotPass">I accept the <a href="#">Terms & Privacy Policy</a></span>
+			<span class="form__forgot">I accept the <a href="#" class="form__link">Terms & Privacy Policy</a></span>
 		</form>
 	</div>
 </div>

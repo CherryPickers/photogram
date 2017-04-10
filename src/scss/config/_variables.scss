@@ -1,0 +1,42 @@
+//------VARIABLES
+
+
+//-----COLORS
+$colorWhite     : #FFF;
+$colorBlack     : #000;
+$colorRed       : #F00;
+$colorGreen     : #0F0;
+$colorBlue      : #00F;
+$colorBackground: whitesmoke;
+$colorText: #333;
+
+
+//-----PATHS
+$fontBaseUrl  : "http://static1.webedia.fr/fonts/";
+$localFontBase: "/_common/fonts";
+$imgBaseUrl   : "/web/skins/default/";
+
+
+//------DIMENSIONS
+$baseFontSize: 10;
+
+$largeImageFlagWidth: 50%;
+
+
+//------MEDIA QUERIES
+$desktop  : 1025px;
+$toDesktop: 1024px;
+$toTablet : 767px;
+
+
+//------FONTS
+$fontDefault     : Arial, Helvetica, Tahoma, sans-serif;
+$baseFont        : "Gotham", $fontDefault;
+$baseFont--bold  : "", $fontDefault;
+$baseFont--italic: "", $fontDefault;
+
+
+//------Z INDEX LEVELS
+$levelBottom: 1;
+$levelMiddle: 2;
+$levelTop   : 3;

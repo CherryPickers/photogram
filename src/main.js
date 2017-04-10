@@ -1,21 +1,21 @@
+//importing files
 import Vue from 'vue'
 import App from './js/App.vue'
-
-import Router from './js/helpers/routes.js'
-
+import Header from './js/components/Header.vue'
+import Feed from './js/components/Feed.vue'
+import Auth from './js/functions/Auth.js'
+import Router from './js/config/routes.js'
+//defining components
+Vue.component('app-header', Header);
+Vue.component('feed', Feed);
+//importing plugins
 import VueResource from 'vue-resource'
 import VeeValidate, { Validator } from 'vee-validate';
-
-import Auth from './js/functions/Auth.js'
-
-import Header from './js/components/Header.vue'
-
+//using plugins
 Vue.use(VueResource)
 Vue.use(Auth)
 Vue.use(VeeValidate);
-
-Vue.component('app-header', Header);
-
+//defining Router
 Router.beforeEach(
 	(to, from, next) => {
 		if(to.matched.some(record => record.meta.forVisitors)){
@@ -35,7 +35,6 @@ Router.beforeEach(
 		else next()
 	}
 )
-
 //client form validation
 Validator.extend('verify_password', {
 	getMessage: field => `minimum 8 characters at least 1 number, 1 special character, 1 uppercase letter`,
@@ -44,7 +43,7 @@ Validator.extend('verify_password', {
 		return strongRegex.test(value);
 	}
 });
-
+//vue init
 new Vue({
 	el: '#app',
 	render: h => h(App),

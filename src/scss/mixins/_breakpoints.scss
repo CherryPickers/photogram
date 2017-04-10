@@ -1,0 +1,20 @@
+//------BREAKPOINTS
+
+
+/* EXAMPLE
+*    @include breakpoint (phone) {
+*        width: 40%;
+*    }
+*/
+
+@mixin breakpoint($point) {
+    @if $point == desktop {//min-width: 1025px
+        @media (min-width: $desktop)                              { @content; }
+    }
+    @else if $point == tablet {//max-width: 1024px
+        @media (max-width: $toDesktop)                            { @content; }
+    }
+    @else if $point == phone {//max-width: 767px
+        @media (max-width: $toTablet)                             { @content; }
+    }
+}

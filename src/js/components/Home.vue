@@ -1,7 +1,10 @@
 <template>
 	<div class="home">
 		<app-header></app-header>
-		<h1>Home</h1>
+		<div class="container">
+			<h1 class="mainTitle">Home</h1>
+			<feed></feed>
+		</div>
 	</div>
 </template>
 <script>

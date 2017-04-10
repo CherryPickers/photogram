@@ -1,0 +1,19 @@
+//------COLumn
+
+.col {
+    &-desk-4 {
+        @include breakpoint(desktop) {
+            display: inline-block;
+            width: 25%;
+            padding: 0 1rem;
+        }
+    }
+
+    &-tab-3 {
+        @include breakpoint(tablet) {
+            display: inline-block;
+            width: 33%;
+            padding: 0 1rem;
+        }
+    }
+}

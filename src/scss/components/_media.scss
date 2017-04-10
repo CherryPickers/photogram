@@ -1,0 +1,50 @@
+//------MEDIA
+
+.media {//defult is top
+    margin-bottom: 0.8rem;
+    
+    &--left {
+        img {
+            display: inline-block;
+            margin-right: 0.5rem;
+
+            vertical-align: middle;
+            border-radius: 50%;
+        }
+    }
+
+    &__img {
+        &--main {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__likes {
+        display: inline-block;
+        padding: 0.5rem 0;
+
+        font-size: 1rem;
+        text-align: right;
+    }
+
+    &__text {
+        color: $colorText;
+    }
+
+    &__comment {
+        display: inline-block;
+        vertical-align: middle;
+
+        font-size: 1rem;
+    }
+
+    &__moreComments {
+        font-size: 1rem;
+        color: #95989a;
+    }
+}

@@ -1,0 +1,51 @@
+//------FORMs login & register styles
+
+.form {
+    width: 30%;
+    margin: 2rem auto;
+
+    &__input {
+        display: block;
+        width: 100%;
+        margin: 2rem 0 0.8rem;
+
+        border: none;
+        border-bottom: 1px solid rgb(149,152,154);
+        background-color: transparent;
+
+        font-size: 1.4rem;
+    }
+
+    &__btn {
+        width: 100%;
+        padding: 0.5rem 0;
+        margin: 30% 0 2rem;
+
+        background-color: #86f186;
+
+        font-size: 1.3rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #fff;
+
+        cursor: pointer;
+    }
+
+    &__forgot {
+        display: block;
+        margin-top: 2rem;
+        text-align: left;
+        color: rgb(149,152,154);
+    }
+
+    &__link {
+        font-weight: 900;
+        color: #86f186;
+        text-transform: uppercase;
+    }
+
+    .is-danger {
+        font-size: 1em;
+        color: red;
+    }
+}
