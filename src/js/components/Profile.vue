@@ -1,9 +1,40 @@
 <template>
 	<div class="profilePage">
 		<app-header></app-header>
-        <div class="container">
-            <h1 class="mainTitle">Profile</h1>
-            <p>This is your Profile Page</p>
+        <div class="container tac">
+            <div class="profile__intro">
+            	<p class="profile__text">hi <span>justVR</span>!</p>
+				<img src="http://lorempixel.com/150/150" alt="" class="imgRound">
+				<p class="profile__text profile__text--smaller">Change Photo</p>
+				<p class="profile__text profile__text--smaller">Edit profile</p>
+            </div>
+			<div class="profile__body">
+				<div class="form">
+					<form>
+						<input placeholder="Name" class="form__input">
+						<span class="help is-danger"></span>
+						<br>
+						<input placeholder="Something about you" class="form__input">
+						<span class="help is-danger"></span>
+						<br>
+						<input placeholder="Private information" class="form__input">
+						<span class="help is-danger"></span>
+						<br>
+						<input placeholder="E-mail" class="form__input">
+						<span class="help is-danger"></span>
+						<br>
+						<input placeholder="Phone number" class="form__input">
+						<span class="help is-danger"></span>
+						<br>
+						<input placeholder="Gender" class="form__input">
+						<span class="help is-danger"></span>
+						<br>
+
+						<button type="submit" class="btn btn--black form__btn">Save</button>
+					</form>
+
+				</div>
+			</div>
         </div>
 	</div>
 </template>

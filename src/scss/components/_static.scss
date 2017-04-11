@@ -1,0 +1,13 @@
+//------STATIC page
+
+.static {
+    padding: 2rem;
+
+    &__lang {
+        float: right;
+
+        font-size: 1.2rem;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+}

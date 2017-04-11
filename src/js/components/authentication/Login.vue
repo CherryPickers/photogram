@@ -1,24 +1,27 @@
 <template>
-	<div class="form">
-		<form @submit.prevent="loginUser">
-			<!--  Email-->
-			<input type="email" name="email" placeholder="Email/Username" v-model="login.email" v-validate="'required|email'" class="form__input" @keydown="clearField">
-			<span v-show="errors.has('email')" class="help is-danger">
-				{{ errors.first('email') }}
-			</span>
-			<br>
-			<!--  Password-->
-			<input type="password" name="password" placeholder="Password" v-model="login.password" v-validate="'required|min:8|verify_password'" class="form__input" @keydown="clearField">
-			<span v-show="errors.has('password')" class="help is-danger">
-				{{ errors.first('password') }}
-			</span>
-			<span class="help is-danger" v-text="login.errors"></span>
-			<!--  Submit-->
-			<span class="form__forgot">Forgot Password?</span>
-			<button type="submit" class="btn form__btn">Log in</button>
-			<span>Don't have account? <router-link to="register" class="form__link">Sign up</router-link></span>
-		</form>
+	<div class="login">
+		<h1 class="logo tac login__logo"><span>Photo</span>gram</h1>
 
+		<div class="form">
+			<form @submit.prevent="loginUser">
+				<!--  Email-->
+				<input type="email" name="email" placeholder="Email/Username" v-model="login.email" v-validate="'required|email'" class="form__input" @keydown="clearField">
+				<span v-show="errors.has('email')" class="help is-danger">
+					{{ errors.first('email') }}
+				</span>
+				<br>
+				<!--  Password-->
+				<input type="password" name="password" placeholder="Password" v-model="login.password" v-validate="'required|min:8|verify_password'" class="form__input" @keydown="clearField">
+				<span v-show="errors.has('password')" class="help is-danger">
+					{{ errors.first('password') }}
+				</span>
+				<span class="help is-danger" v-text="login.errors"></span>
+				<!--  Submit-->
+				<span class="form__forgot">Forgot Password?</span>
+				<button type="submit" class="btn btn--green form__btn">Log in</button>
+				<span>Don't have account? <router-link to="register" class="form__link">Sign up</router-link></span>
+			</form>
+		</div>
 	</div>
 </template>
 

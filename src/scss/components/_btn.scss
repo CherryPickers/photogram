@@ -2,4 +2,12 @@
 
 .btn {
     border-radius: 3rem;
+
+    &--green {
+        background-color: #09f3a2;
+    }
+
+    &--black {
+        background-color: #000;
+    }
 }

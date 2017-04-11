@@ -1,0 +1,23 @@
+//------PROFILE page
+
+.profile {
+    &__intro {
+        margin-bottom: 2rem;
+    }
+
+    &__text {
+        padding: 1rem 0;
+
+        font-size: 1.4rem;
+        text-transform: capitalize;
+        color: #333;
+
+        &--smaller {
+            font-size: 1.2rem;
+        }
+        
+        span {
+            font-weight: 900;
+        }
+    }
+}

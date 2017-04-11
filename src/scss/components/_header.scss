@@ -2,6 +2,10 @@
 
 .header {
     padding: 1rem;
-    background-color: rgb(245,245,245);
+    border-bottom: 0.2rem solid #d7d8d8;
     text-align: center;
+
+    &__contentHolder {
+        position: relative;
+    }
 }

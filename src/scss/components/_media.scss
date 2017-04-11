@@ -2,14 +2,13 @@
 
 .media {//defult is top
     margin-bottom: 0.8rem;
-    
+
     &--left {
         img {
             display: inline-block;
             margin-right: 0.5rem;
 
             vertical-align: middle;
-            border-radius: 50%;
         }
     }
 

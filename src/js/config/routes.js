@@ -6,6 +6,7 @@ import Login from './../components/authentication/Login.vue'
 import Register from './../components/authentication/Register.vue'
 import Profile from './../components/Profile.vue'
 import Feed from './../components/Feed.vue'
+import Static from './../components/Static.vue'
 
 Vue.use(VueRouter)
 
@@ -45,6 +46,13 @@ const router = new VueRouter({
 			component: Feed,
 			meta: {
 				forAuth: true
+			}
+		},
+		{
+			path: "/terms-and-condition",
+			component: Static,
+			meta: {
+				forVisitors: true
 			}
 		}
 	],

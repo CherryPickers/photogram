@@ -1,11 +1,17 @@
 <template>
 	<header class="header">
-		<h1 class="logo">Photogram.</h1>
-		<nav class="mainNav">
-			<router-link to="home" class="mainNav__link"><span>Home</span></router-link>|
-			<router-link to="profile" class="mainNav__link"><span>Profile</span></router-link>|
-			<button type="button" name="button" @click="logOut" class="mainNav__link">Sign out</button>
-		</nav>
+		<div class="header__contentHolder">
+			<h1 class="logo"><span>Photo</span>gram</h1>
+			<nav class="mainNav mainNav--left">
+				<router-link to="home" class="mainNav__link"><span>Home</span></router-link>|
+				<router-link to="profile" class="mainNav__link"><span>Profile</span></router-link>|
+				<button type="button" name="button" @click="logOut" class="mainNav__link">Sign out</button>
+			</nav>
+			<nav class="mainNav mainNav--right">
+				<a href="#" class="mainNav__link">search</a>
+				<a href="#" class="mainNav__link">srb</a>
+			</nav>
+		</div>
  	</header>
 </template>
 

@@ -2,7 +2,18 @@
 
 .mainNav {
     display: inline-block;
-    float: left;
+
+    position: absolute;
+    top: 50%;
+    @include transform (translate(0,-50%));
+
+    &--left {
+        left: 0;
+    }
+
+    &--right {
+        right: 0;
+    }
 
     &__link {
         padding-right: 1rem;

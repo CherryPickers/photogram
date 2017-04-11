@@ -3,6 +3,7 @@ import Vue from 'vue'
 import App from './js/App.vue'
 import Header from './js/components/Header.vue'
 import Feed from './js/components/Feed.vue'
+import Static from './js/components/Static.vue'
 import Auth from './js/functions/Auth.js'
 import Router from './js/config/routes.js'
 //defining components

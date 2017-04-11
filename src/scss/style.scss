@@ -5,7 +5,8 @@
 @import 'mixins/breakpoints',
         'mixins/calc',
         'mixins/fontFace',
-        'mixins/borderRadius';
+        'mixins/borderRadius',
+        'mixins/transform';
 
 //------MAIN CONFIG
 @import 'config/reset',
@@ -22,7 +23,12 @@
         'components/row',
         'components/col',
         'components/btn',
+        'components/common',
 
         'components/media',
         'components/feed',
-        'components/form';
+        'components/form',
+        'components/profile',
+        'components/static',
+        'components/login',
+        'components/register';

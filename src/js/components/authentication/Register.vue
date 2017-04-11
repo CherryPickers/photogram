@@ -1,5 +1,6 @@
 <template>
 <div class="register">
+	<h1 class="logo tac register__logo"><span>Photo</span>gram</h1>
 
 	<div class="form">
 		<form @submit.prevent="registerUser">
@@ -19,10 +20,10 @@
 			<span class="help is-danger" v-text="register.errors"></span>
 			<!--  Static-->
 			<span class="form__forgot">Forgot Password?</span>
-			<button class="btn form__btn">Sign up</button>
+			<button class="btn btn--green form__btn">Sign up</button>
 			<span class="form__forgot">Already have the account? <router-link to="/" class="form__link">LOG IN</router-link></span>
 			<br>
-			<span class="form__forgot">I accept the <a href="#" class="form__link">Terms & Privacy Policy</a></span>
+			<span class="form__forgot">I accept the <router-link to="/terms-and-condition" class="form__link">Terms & Privacy Policy</router-link></span>
 		</form>
 	</div>
 </div>
