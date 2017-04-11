@@ -17,16 +17,9 @@
     }
 
     &__btn {
-        width: 100%;
         padding: 0.5rem 0;
-        margin: 30% 0 2rem;
 
         font-size: 1.3rem;
-        font-weight: 900;
-        text-transform: uppercase;
-        color: #fff;
-
-        cursor: pointer;
     }
 
     &__forgot {
@@ -38,7 +31,7 @@
 
     &__link {
         font-weight: 900;
-        color: #09f3a2;
+        color: $colorMain;
         text-transform: uppercase;
     }
 

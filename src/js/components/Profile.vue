@@ -4,7 +4,7 @@
         <div class="container tac">
             <div class="profile__intro">
             	<p class="profile__text">hi <span>justVR</span>!</p>
-				<img src="http://lorempixel.com/150/150" alt="" class="imgRound">
+				<img src="http://lorempixel.com/150/150/abstract" alt="" class="imgRound">
 				<p class="profile__text profile__text--smaller">Change Photo</p>
 				<p class="profile__text profile__text--smaller">Edit profile</p>
             </div>

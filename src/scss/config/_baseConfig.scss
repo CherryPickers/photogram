@@ -8,9 +8,9 @@
     -webkit-margin-after: 0;
 }
 
-::selection          { color: $colorWhite; background-color: lighten($colorBlack, 15%); } // NORMAL
-::-moz-selection     { color: $colorWhite; background-color: lighten($colorBlack, 15%); } // FIREFOX
-::-webkit-selection  { color: $colorWhite; background-color: lighten($colorBlack, 15%); } // WEBKIT
+::selection          { color: $colorBlack; background-color: lighten($colorMain, 15%); } // NORMAL
+::-moz-selection     { color: $colorBlack; background-color: lighten($colorMain, 15%); } // FIREFOX
+::-webkit-selection  { color: $colorBlack; background-color: lighten($colorMain, 15%); } // WEBKIT
 
 html {
 	overflow-y: scroll;

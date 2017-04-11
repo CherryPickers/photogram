@@ -1,10 +1,20 @@
 //------BTN
 
 .btn {
+    width: 100%;
+
+    margin: 30% 0 2rem;
+
     border-radius: 3rem;
 
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #fff;
+
+    cursor: pointer;
+
     &--green {
-        background-color: #09f3a2;
+        background-color: $colorMain;
     }
 
     &--black {
