@@ -2,6 +2,9 @@
 	<div class="profilePage">
 		<app-header></app-header>
         <div class="container tac">
+			<button class="clickme" @click="print">
+				click
+			</button>
             <div class="profile__intro">
             	<p class="profile__text">hi <span>justVR</span>!</p>
 				<img src="http://lorempixel.com/150/150/abstract" alt="" class="imgRound">
@@ -39,5 +42,20 @@
 	</div>
 </template>
 <script>
+export default {
+	methods: {
+		print() {
+			var theRequest   = new XMLHttpRequest(),
+				token = localStorage.getItem('token'),
+				link = 'http://larapi.com/api/get_user_details?token=' + token;
+
+			this.$http.get(link)
+			.then(function(response) {
+				 this.list = response.data;
+				 console.log(response.data);
+			})
+		}
+	}
+}
 
 </script>

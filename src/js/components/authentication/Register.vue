@@ -66,38 +66,4 @@
 </script>
 
 <style>
-	.signUp {
-		width: 30%;
-		margin: 2rem auto;
-	}
-	.signUp__username, .signUp__password {
-		display: block;
-		width: 100%;
-		margin: 2rem 0;
-		font-size: 1.8rem;
-		appearance: none;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		border: none;
-		border-bottom: 1px solid rgb(149,152,154);
-	}
-	.signUp__button {
-		width: 100%;
-		margin: 2rem 0;
-		padding: 0.5rem 0;
-		font-size: 1.8rem;
-		text-transform: uppercase;
-		color: rgb(149,152,154);
-		appearance: none;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		background-color: white;
-		border: 1px solid rgb(149,152,154);
-		cursor: pointer;
-	}
-	.forgotPass {
-		display: block;
-		text-align: left;
-		color: rgb(149,152,154);
-	}
 </style>

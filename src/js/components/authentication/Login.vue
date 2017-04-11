@@ -32,7 +32,8 @@
 				login: {
 					email:    '',
 					password: '',
-					errors:   ''
+					errors:   '',
+					token: ''
 				}
 			}
 		},
@@ -47,7 +48,6 @@
 					.then(response => { //if success
 				    	this.$auth.setToken(response.body.token)
 				    	this.$router.push("/home")
-
 				  	}).catch(function (data) { //if there is an error
 						this.login.errors = 'Invalid email or password'; //write into errors field
 					})
