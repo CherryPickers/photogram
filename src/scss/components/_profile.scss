@@ -1,4 +1,4 @@
-//------PROFILE page
+//------PROFILE page & editprofile page
 
 .profile {
     &__intro {
@@ -15,9 +15,34 @@
         &--smaller {
             font-size: 1.2rem;
         }
-        
+
         span {
             font-weight: 900;
         }
+    }
+
+    &__btn {
+        padding: 0.5rem;
+    }
+
+    &__subtitle {
+        margin-bottom: 1rem;
+    }
+
+    &__link {
+        display: inline-block;
+        width: 4rem;
+
+        float: left;
+    }
+
+    &__info {
+        margin-bottom: 1rem;
+
+        font-size: 1.4rem;
+    }
+
+    &__img {
+        margin-right: 2rem;
     }
 }

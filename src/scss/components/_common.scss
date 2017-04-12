@@ -23,4 +23,8 @@
 
 .link {
     color: #000;
+
+    &--green {
+        color: $colorMain;
+    }
 }

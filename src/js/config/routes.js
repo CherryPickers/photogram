@@ -5,6 +5,7 @@ import Home from './../components/Home.vue'
 import Login from './../components/authentication/Login.vue'
 import Register from './../components/authentication/Register.vue'
 import Profile from './../components/Profile.vue'
+import Editprofile from './../components/Editprofile.vue'
 import Feed from './../components/Feed.vue'
 import Static from './../components/Static.vue'
 
@@ -37,6 +38,13 @@ const router = new VueRouter({
 		{
 			path: "/profile",
 			component: Profile,
+			meta: {
+				forAuth: true
+			}
+		},
+		{
+			path: "/edit-profile",
+			component: Editprofile,
 			meta: {
 				forAuth: true
 			}
