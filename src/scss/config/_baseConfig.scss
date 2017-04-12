@@ -19,6 +19,7 @@ html {
 
 html, body {
     width: 100%;
+    height: 100%;
     overflow-x: hidden;
 }
 
@@ -36,3 +37,4 @@ select { box-sizing: inherit; } // user agent stylesheet default is box-sizing: 
 // WEBKIT CUSTOM input[type=search]
 input[type="search"] { -webkit-appearance: textfield !important; }
 input[type="search"]::-webkit-search-cancel-button { display: none; }
+

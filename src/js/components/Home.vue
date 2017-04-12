@@ -9,3 +9,8 @@
 <script>
 
 </script>
+<style scoped>
+	#app {
+		background-image: none;
+	}
+</style>

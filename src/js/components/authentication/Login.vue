@@ -59,3 +59,8 @@
 		}
 	}
 </script>
+<style scoped>
+	.logo {
+		color: white;
+	}
+</style>

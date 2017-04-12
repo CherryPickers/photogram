@@ -48,7 +48,6 @@ export default {
 			var theRequest   = new XMLHttpRequest(),
 				token = localStorage.getItem('token'),
 				link = 'http://larapi.com/api/get_user_details?token=' + token;
-
 			this.$http.get(link)
 			.then(function(response) {
 				 this.list = response.data;
@@ -56,6 +55,7 @@ export default {
 			})
 		}
 	}
+
 }
 
 </script>
