@@ -28,3 +28,44 @@
         color: $colorMain;
     }
 }
+
+.square {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+
+    &--full {
+        background-color: #95989a;
+    }
+
+    &--cross {
+        position: relative;
+        border: 1px solid #333;
+
+        &:before {
+            content: '';
+
+            width: 1px;
+            height: 14px;
+
+            position: absolute;
+            top: 0;
+            left: 6px;
+
+            background-color: #333;
+        }
+        
+        &:after {
+            content: '';
+
+            width: 14px;
+            height: 1px;
+
+            position: absolute;
+            top: 6px;
+            left: 0;
+
+            background-color: #333;
+        }
+    }
+}
