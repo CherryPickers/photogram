@@ -22,7 +22,11 @@
     }
 
     &__btn {
-        padding: 0.5rem;
+        padding: 0.5rem 1.2rem;
+        margin-bottom: 2rem;
+
+        font-size: 1.2rem;
+        text-transform: capitalize;
     }
 
     &__subtitle {
@@ -45,4 +49,21 @@
     &__img {
         margin-right: 2rem;
     }
+
+    &__text {
+        margin-bottom: 2rem;
+    }
+
+    &__media {
+        margin-bottom: 3rem;
+    }
+
+    &__feedHeader {
+        margin-bottom: 4rem;
+    }
+
+    &__square {
+        margin-right: 0.5rem;
+    }
+
 }
