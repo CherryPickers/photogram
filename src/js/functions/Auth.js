@@ -27,7 +27,8 @@ export default function(Vue) {
 				return true
 			else
 				return false
-		}
+		},
+		getAuthHeader() { return { 'Authorization': 'Bearer ' + localStorage.getItem('token') } }
 	}
 	Object.defineProperties(Vue.prototype,{
 		$auth: {

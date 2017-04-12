@@ -11,8 +11,15 @@
 					{{ result.username }}
 				</li>
             <div class="profile__intro">
-            	<p class="profile__text">hi <span>justVR</span>!</p>
-				<img src="http://lorempixel.com/150/150/abstract" alt="" class="imgRound">
+            	<div v-if="!profilImage">
+				    <h2>Select an image</h2>
+				    <input type="file" @change="onFileChange" name="image">
+				</div>
+				<div v-else>
+					<img :src="profilImage" />
+					<button @click="submit">submit</button>
+					<button @click="removeImage">Remove image</button>
+				</div>
 				<p class="profile__text profile__text--smaller">Change Photo</p>
 				<p class="profile__text profile__text--smaller">Edit profile</p>
             </div>
@@ -50,7 +57,8 @@
 export default {
 	data() {
 		return {
-			results: ''
+			results: '',
+			profilImage: ''
 		}
 	},
 	methods: {
@@ -63,8 +71,43 @@ export default {
 			.then(function(response) {
 				 this.results = response.data;
 			})
-		}
+		},
+		onFileChange(e) {
+	      var files = e.target.files || e.dataTransfer.files;
+	      if (!files.length)
+	        return;
+	      this.createImage(files[0]);
+	    },
+	    createImage(file) {
+	      var image = new Image();
+	      var reader = new FileReader();
+	      var vm = this;
+
+	      reader.onload = (e) => {
+	        vm.profilImage = e.target.result;
+	      };
+	      reader.readAsDataURL(file);
+	    },
+	    removeImage: function (e) {
+	      this.profilImage = '';
+	    },
+	    submit: function() {
+	    	var token = localStorage.getItem('token');
+	    	this.$http.headers.common['Authorization'] = this.$auth.getAuthHeader();
+	    	this.$http.post('http://larapi.com/api/update_user_details', {
+			  
+
+			})
+			.then(response => {
+				console.log(response);
+				console.log('Authorization' + 'Bearer ' + token);
+
+			}).catch(function (data) { //if there is an error
+				console.log(data)
+			})
+	    }
 	}
 }
+
 
 </script>
