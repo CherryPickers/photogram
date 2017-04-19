@@ -14,6 +14,7 @@
 				</div>
 				<p class="text profile__text">A person ready to share everything she has with the rest of the world. Enjoy my window to the world!</p>
 				<router-link to="edit-profile" class="btn btn--gray profile__btn">Edit profile</router-link>
+				<button @click="print">send</button>
 			</div>
 
 			<!--  Profile Feed-->
@@ -139,6 +140,7 @@ export default {
 			this.$http.get(link)
 			.then(function(response) {
 				 this.results = response.data;
+				 console.log(this.results);
 			})
 		}
 	}

@@ -1,6 +1,6 @@
 <template>
 	<div class="login">
-		<h1 class="logo tac login__logo"><span>Photo</span>gram</h1>
+		<h1 class="logo tac login__logo">Photo<span>gram</span></h1>
 
 		<div class="form">
 			<form @submit.prevent="loginUser">

@@ -11,7 +11,7 @@ $colorMain  : #09f3a2;
 
 //-----PATHS
 $fontBaseUrl  : "http://static1.webedia.fr/fonts/";
-$localFontBase: "/_common/fonts";
+$localFontBase: "/src/fonts/";
 $imgBaseUrl   : "/web/skins/default/";
 
 
@@ -29,7 +29,9 @@ $toTablet : 767px;
 
 //------FONTS
 $fontDefault     : Arial, Helvetica, Tahoma, sans-serif;
-$baseFont        : "Gotham", $fontDefault;
+$baseFont        : 'HelveticaNeue', $fontDefault;
+$baseFont--thin  : 'HelveticaNeueThin';
+$baseFont--light : 'HelveticaNeueLight';
 $baseFont--bold  : "", $fontDefault;
 $baseFont--italic: "", $fontDefault;
 
@@ -38,3 +40,6 @@ $baseFont--italic: "", $fontDefault;
 $levelBottom: 1;
 $levelMiddle: 2;
 $levelTop   : 3;
+
+
+

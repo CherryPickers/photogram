@@ -1,8 +1,27 @@
-//------TYPOGRAPHY
 
+//-------------------------
+//---------------TYPOGRAPHY
+//-------------------------
 
 //------FONT-FACE
-// @include fontFace (Gotham, gotham-light);
+
+// @font-face {
+//   font-family: 'HelveticaNeue';
+//   src: url('/src/fonts/HelveticaNeue.ttf') format('ttf'),
+//        url('/src/fonts/HelveticaNeue.otf') format('otf');
+// }
+
+// @font-face {
+//   font-family: 'Helvetica Neue Thin';
+//   src: url('/src/fonts/HelveticaNeueThin.ttf') format('ttf');
+// }
+
+// @include fontFace (fontello, /fontello, null, null, eot woff ttf svg);
+
+
+ @include fontFace (HelveticaNeue, HelveticaNeue, null, null, ttf otf);
+ @include fontFace (HelveticaNeueThin, HelveticaNeue Thin, null, null, ttf);
+ @include fontFace (HelveticaNeueLight, HelveticaNeue Light, null, null, ttf);
 
 //------FONT SIZES
 html {

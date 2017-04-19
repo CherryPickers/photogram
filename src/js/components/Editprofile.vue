@@ -1,41 +1,34 @@
 <template>
 	<div class="profilePage">
 		<app-header></app-header>
-        <div class="container tac">
-			<button class="clickme" @click="print">
-				click
-			</button>
-				<li v-for="result in results">
-					{{ result.name }}
-					<br>
-					{{ result.username }}
-				</li>
-            <div class="profile__intro">
-            	<div v-if="!profilImage">
-				    <h2>Select an image</h2>
-				    <input type="file" @change="onFileChange" name="image">
-				</div>
-				<div v-else>
-					<img :src="profilImage" />
-					<button @click="submit">submit</button>
-					<button @click="removeImage">Remove image</button>
-				</div>
-				<p class="profile__text profile__text--smaller">Change Photo</p>
-				<p class="profile__text profile__text--smaller">Edit profile</p>
-            </div>
+        <div class="container tac">            
 			<div class="profile__body">
 				<div class="form">
-					<form>
-						<input placeholder="Name" class="form__input">
+					<form id="editForm" enctype="multipart/for-data" @submit.prevent="updateForm">
+						<div class="profile__intro">
+		            	<div>
+		            	<p class="profile__text profile__text--smaller">Edit profile</p>
+							<div v-if="!image">
+								<input type="file" name="image" @change="onFileChange">
+							</div>
+							<div v-else>
+								<img :src="image" />
+								<button @click="removeImage">Remove image</button>
+							</div>
+							</div>
+							<!-- <p class="profile__text profile__text--smaller">Change Photo</p> -->
+								
+			            </div>
+						<input placeholder="Name" name="name" type="text" class="form__input" value="">
 						<span class="help is-danger"></span>
 						<br>
-						<input placeholder="Something about you" class="form__input">
+						<input placeholder="Something about you" name="username" type="text" class="form__input">
 						<span class="help is-danger"></span>
 						<br>
-						<input placeholder="Private information" class="form__input">
+						<input placeholder="Private information" name="email" type="text" class="form__input">
 						<span class="help is-danger"></span>
 						<br>
-						<input placeholder="E-mail" class="form__input">
+						<input placeholder="E-mail" class="form__input" >
 						<span class="help is-danger"></span>
 						<br>
 						<input placeholder="Phone number" class="form__input">
@@ -44,10 +37,12 @@
 						<input placeholder="Gender" class="form__input">
 						<span class="help is-danger"></span>
 						<br>
+						<div v-for="result in results">
+							
+						</div>
 
 						<button type="submit" class="btn btn--black form__btn">Save</button>
 					</form>
-
 				</div>
 			</div>
         </div>
@@ -58,20 +53,18 @@ export default {
 	data() {
 		return {
 			results: '',
-			profilImage: ''
+			image: '',
+			profilePicture: '',
+			fileUploadFormData: new FormData()
 		}
 	},
+	watch : {
+        profilePicture: function () {
+            this.updateProfilePic();
+        }
+    },
 	methods: {
-		print() {
-			var theRequest   = new XMLHttpRequest(),
-				token = localStorage.getItem('token'),
-				link = 'http://larapi.com/api/get_user_details?token=' + token;
-
-			this.$http.get(link)
-			.then(function(response) {
-				 this.results = response.data;
-			})
-		},
+		// DISPLAY IMAGE IN CLIENT BROWSER
 		onFileChange(e) {
 	      var files = e.target.files || e.dataTransfer.files;
 	      if (!files.length)
@@ -84,30 +77,56 @@ export default {
 	      var vm = this;
 
 	      reader.onload = (e) => {
-	        vm.profilImage = e.target.result;
+	        vm.image = e.target.result;
 	      };
 	      reader.readAsDataURL(file);
 	    },
 	    removeImage: function (e) {
-	      this.profilImage = '';
+	      this.image = '';
 	    },
-	    submit: function() {
+	    fetchTask: function() {
 	    	var token = localStorage.getItem('token');
-	    	this.$http.headers.common['Authorization'] = this.$auth.getAuthHeader();
-	    	this.$http.post('http://larapi.com/api/update_user_details', {
-			  
+	    	 this.$http.post('http://larapi.com/api/update_user_details', (data) => {
+	    	 	this.image = data;
+            	
+          	}, {
+            // Attach the JWT header
+            	headers: this.$auth.getAuthHeader()
+          	})
+	    	 .then(response => { //if success
+	  			
+			  	}).catch(function (data) { //if there is an error
+				})      		
+	    },
+	    updateForm: function() {
+	       var form = document.querySelector('form');
+	       var formdata = new FormData(form);
+	       var token = localStorage.getItem('token');
+	       console.log(formdata)
+	       this.$http.post('http://larapi.com/api/update_user_details', formdata, {
+            // Attach the JWT header
+            	headers: this.$auth.getAuthHeader()
+       
+          	})
 
+	       .then((response) => {
+	       		// this.$router.push({path: '/profile', query: {alert: response.message}})
+	       },(response) => {
+	       	console.log('error callback')
+	       });
+		}	
+	},
+	created: function() {
+		var theRequest   = new XMLHttpRequest(),
+				token = localStorage.getItem('token'),
+				link = 'http://larapi.com/api/get_user_details?token=' + token;
+			this.$http.get(link)
+			.then(function(response) {
+				 this.results = response.data;
+				 console.log(this.results);
 			})
-			.then(response => {
-				console.log(response);
-				console.log('Authorization' + 'Bearer ' + token);
-
-			}).catch(function (data) { //if there is an error
-				console.log(data)
-			})
-	    }
 	}
+	
 }
-
 
 </script>

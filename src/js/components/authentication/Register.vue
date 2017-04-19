@@ -1,6 +1,6 @@
 <template>
 <div class="register">
-	<h1 class="logo tac register__logo"><span>Photo</span>gram</h1>
+	<h1 class="logo tac register__logo">Photo<span>gram</span></h1>
 
 	<div class="form">
 		<form @submit.prevent="registerUser">

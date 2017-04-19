@@ -1,7 +1,7 @@
 <template>
 	<header class="header">
 		<div class="header__contentHolder">
-			<h1 class="logo"><span>Photo</span>gram</h1>
+			<h1 class="logo">Photo<span>gram</span></h1>
 			<nav class="mainNav mainNav--left">
 				<router-link to="home" class="mainNav__link"><span>Home</span></router-link>|
 				<router-link to="profile" class="mainNav__link"><span>Profile</span></router-link>|
