@@ -9,7 +9,7 @@
 		            	<div>
 		            	<p class="profile__text profile__text--smaller">Edit profile</p>
 							<div v-if="!image">
-								<input type="file" name="image" @change="onFileChange">
+								<input type="file" name="image">
 							</div>
 							<div v-else>
 								<img :src="image" />
@@ -99,20 +99,22 @@ export default {
 				})      		
 	    },
 	    updateForm: function() {
-	       var form = document.querySelector('form');
-	       var formdata = new FormData(form);
-	       var token = localStorage.getItem('token');
-	       console.log(formdata)
-	       this.$http.post('http://larapi.com/api/update_user_details', formdata, {
-            // Attach the JWT header
-            	headers: this.$auth.getAuthHeader()
-       
-          	})
+			var imgUrl = 'http://larapi.com/public/uploads/';
+	       	var form = document.querySelector('form');
+			var formdata = new FormData(form);
+			var token = localStorage.getItem('token');
+			console.log(formdata)
+			this.$http.post('http://larapi.com/api/update_user_details', formdata, {
+			// Attach the JWT header
+				headers: this.$auth.getAuthHeader()
 
-	       .then((response) => {
-	       		// this.$router.push({path: '/profile', query: {alert: response.message}})
-	       },(response) => {
-	       	console.log('error callback')
+				})
+
+			.then((response) => {
+					// this.$router.push({path: '/profile', query: {alert: response.message}})
+					console.log(response)
+			},(response) => {
+				console.log('error callback')
 	       });
 		}	
 	},

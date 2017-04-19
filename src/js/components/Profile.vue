@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="profile__media tac">
 				<div class="media media--left">
-					<h2 class="profile__text">user_name</h2>
+					<h2 class="profile__text" v-for="result in results">{{result.name}}</h2>
 					<img src="http://lorempixel.com/120/120/animals/1" alt="" class="media--left__img imgRound profile__img">
 					<div class="subtitle media__title">
 						<p class="profile__info tal"><a href="#" class="link--green profile__link">105</a>posts</p>
@@ -14,7 +14,6 @@
 				</div>
 				<p class="text profile__text">A person ready to share everything she has with the rest of the world. Enjoy my window to the world!</p>
 				<router-link to="edit-profile" class="btn btn--gray profile__btn">Edit profile</router-link>
-				<button @click="print">send</button>
 			</div>
 
 			<!--  Profile Feed-->
@@ -132,17 +131,15 @@ export default {
 			results: ''
 		}
 	},
-	methods: {
-		print() {
-			var theRequest   = new XMLHttpRequest(),
-				token = localStorage.getItem('token'),
-				link = 'http://larapi.com/api/get_user_details?token=' + token;
-			this.$http.get(link)
-			.then(function(response) {
-				 this.results = response.data;
-				 console.log(this.results);
-			})
-		}
+	created: function(){
+		var theRequest   = new XMLHttpRequest(),
+			token = localStorage.getItem('token'),
+			link = 'http://larapi.com/api/get_user_details?token=' + token;
+		this.$http.get(link)
+		.then(function(response) {
+			 this.results = response.data;
+			 console.log(this.results);
+		})
 	}
 
 }
