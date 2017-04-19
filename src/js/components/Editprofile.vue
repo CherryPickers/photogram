@@ -1,7 +1,7 @@
 <template>
 	<div class="profilePage">
 		<app-header></app-header>
-        <div class="container tac">            
+        <div class="container tac">
 			<div class="profile__body">
 				<div class="form">
 					<form id="editForm" enctype="multipart/for-data" @submit.prevent="updateForm">
@@ -9,7 +9,7 @@
 		            	<div>
 		            	<p class="profile__text profile__text--smaller">Edit profile</p>
 							<div v-if="!image">
-								<input type="file" name="image" @change="onFileChange">
+								<input type="file" name="image">
 							</div>
 							<div v-else>
 								<img :src="image" />
@@ -17,7 +17,7 @@
 							</div>
 							</div>
 							<!-- <p class="profile__text profile__text--smaller">Change Photo</p> -->
-								
+
 			            </div>
 						<input placeholder="Name" name="name" type="text" class="form__input" value="">
 						<span class="help is-danger"></span>
@@ -38,7 +38,7 @@
 						<span class="help is-danger"></span>
 						<br>
 						<div v-for="result in results">
-							
+
 						</div>
 
 						<button type="submit" class="btn btn--black form__btn">Save</button>
@@ -88,15 +88,15 @@ export default {
 	    	var token = localStorage.getItem('token');
 	    	 this.$http.post('http://larapi.com/api/update_user_details', (data) => {
 	    	 	this.image = data;
-            	
+
           	}, {
             // Attach the JWT header
             	headers: this.$auth.getAuthHeader()
           	})
 	    	 .then(response => { //if success
-	  			
+
 			  	}).catch(function (data) { //if there is an error
-				})      		
+				})
 	    },
 	    updateForm: function() {
 	       var form = document.querySelector('form');
@@ -106,15 +106,16 @@ export default {
 	       this.$http.post('http://larapi.com/api/update_user_details', formdata, {
             // Attach the JWT header
             	headers: this.$auth.getAuthHeader()
-       
+
           	})
 
 	       .then((response) => {
 	       		// this.$router.push({path: '/profile', query: {alert: response.message}})
+	       		console.log(response)
 	       },(response) => {
 	       	console.log('error callback')
 	       });
-		}	
+		}
 	},
 	created: function() {
 		var theRequest   = new XMLHttpRequest(),
@@ -126,7 +127,7 @@ export default {
 				 console.log(this.results);
 			})
 	}
-	
+
 }
 
 </script>
