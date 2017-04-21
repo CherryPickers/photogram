@@ -6,7 +6,8 @@
         'mixins/calc',
         'mixins/fontFace',
         'mixins/borderRadius',
-        'mixins/transform';
+        'mixins/transform',
+        'mixins/placeholder';
 
 //------MAIN CONFIG
 @import 'config/reset',
@@ -23,6 +24,7 @@
         'components/row',
         'components/col',
         'components/btn',
+        'components/square',
         'components/common',
 
         'components/media',

@@ -18,6 +18,15 @@
 
         font-size: 1.4rem;
         color: #fff;
+
+        @include inputPlaceholder { color: white; }
+
+        &--colorBlack {
+            color: black;
+
+            @include inputPlaceholder { color: #95989a; }
+
+        }
     }
 
     &__btn {
@@ -44,4 +53,3 @@
         color: red;
     }
 }
-

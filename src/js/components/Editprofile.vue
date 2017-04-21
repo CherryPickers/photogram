@@ -19,22 +19,25 @@
 							<!-- <p class="profile__text profile__text--smaller">Change Photo</p> -->
 
 			            </div>
-						<input placeholder="Name" name="name" type="text" class="form__input" value="">
+						<input placeholder="Name" name="name" type="text" class="form__input form__input--colorBlack" value="">
 						<span class="help is-danger"></span>
 						<br>
-						<input placeholder="Something about you" name="username" type="text" class="form__input">
+						<input placeholder="Username" name="username" type="text" class="form__input form__input--colorBlack">
 						<span class="help is-danger"></span>
 						<br>
-						<input placeholder="Private information" name="email" type="text" class="form__input">
+						<input placeholder="Something about you" name="information" type="text" class="form__input form__input--colorBlack">
 						<span class="help is-danger"></span>
 						<br>
-						<input placeholder="E-mail" class="form__input" >
+						<input placeholder="Private information" name="email" type="text" class="form__input form__input--colorBlack">
 						<span class="help is-danger"></span>
 						<br>
-						<input placeholder="Phone number" class="form__input">
+						<input placeholder="E-mail" class="form__input form__input--colorBlack" >
 						<span class="help is-danger"></span>
 						<br>
-						<input placeholder="Gender" class="form__input">
+						<input placeholder="Phone number" class="form__input form__input--colorBlack">
+						<span class="help is-danger"></span>
+						<br>
+						<input placeholder="Gender" class="form__input form__input--colorBlack">
 						<span class="help is-danger"></span>
 						<br>
 						<div v-for="result in results">
