@@ -2,12 +2,6 @@
 	<div class="profilePage">
 		<app-header></app-header>
 		<div class="container">
-			<li v-for="result in results" class="nowyouseeme">
-				lalalal
-				{{ result.name }}
-				<br>
-				{{ result.username }}
-			</li>
 			<div class="profile__media tac">
 				<div class="media media--left">
 					<h2 class="profile__text" v-for="result in results">{{result.name}}</h2>

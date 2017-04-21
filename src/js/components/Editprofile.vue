@@ -12,7 +12,7 @@
 								<input type="file" name="image">
 							</div>
 							<div v-else>
-								<img :src="image" />
+								<img :src="'imageUrl'+'profile.image_url'" />
 								<button @click="removeImage">Remove image</button>
 							</div>
 							</div>
@@ -43,19 +43,22 @@
 
 						<button type="submit" class="btn btn--black form__btn">Save</button>
 					</form>
+					<button @click="imgconsole">consloleImg</button>
 				</div>
 			</div>
         </div>
 	</div>
 </template>
 <script>
+// const imageUrl = 'http://larapi.com/public/uploads/';
 export default {
 	data() {
 		return {
 			results: '',
 			image: '',
 			profilePicture: '',
-			fileUploadFormData: new FormData()
+			fileUploadFormData: new FormData(),
+			imageUrl :'http://larapi.com/public/uploads/'
 		}
 	},
 	watch : {
@@ -116,7 +119,11 @@ export default {
 			},(response) => {
 				console.log('error callback')
 	       });
+		},
+		imgconsole: function() {
+			console.log(imageUrl);
 		}
+
 	},
 	created: function() {
 		var theRequest   = new XMLHttpRequest(),
@@ -126,6 +133,7 @@ export default {
 			.then(function(response) {
 				 this.results = response.data;
 				 console.log(this.results);
+
 			})
 	}
 
