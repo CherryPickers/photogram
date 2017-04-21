@@ -138,7 +138,6 @@ export default {
 		this.$http.get(link)
 		.then(function(response) {
 			 this.results = response.data;
-			 console.log(this.results);
 		})
 	}
 

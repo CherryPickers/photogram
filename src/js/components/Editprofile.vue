@@ -12,7 +12,7 @@
 								<input type="file" name="image">
 							</div>
 							<div v-else>
-								<img :src="'imageUrl'+'profile.image_url'" />
+								<img :src="imgOutput" />
 								<button @click="removeImage">Remove image</button>
 							</div>
 							</div>
@@ -40,10 +40,7 @@
 						<input placeholder="Gender" class="form__input form__input--colorBlack">
 						<span class="help is-danger"></span>
 						<br>
-						<div v-for="result in results">
-
-						</div>
-
+						<img :src="imgOutput" />
 						<button type="submit" class="btn btn--black form__btn">Save</button>
 					</form>
 					<button @click="imgconsole">consloleImg</button>
@@ -53,7 +50,6 @@
 	</div>
 </template>
 <script>
-// const imageUrl = 'http://larapi.com/public/uploads/';
 export default {
 	data() {
 		return {
@@ -61,7 +57,8 @@ export default {
 			image: '',
 			profilePicture: '',
 			fileUploadFormData: new FormData(),
-			imageUrl :'http://larapi.com/public/uploads/'
+			imageUrl : 'http://larapi.com/public/uploads/',
+			imgOutput: ''
 		}
 	},
 	watch : {
@@ -109,22 +106,20 @@ export default {
 	       	var form = document.querySelector('form');
 			var formdata = new FormData(form);
 			var token = localStorage.getItem('token');
-			console.log(formdata)
 			this.$http.post('http://larapi.com/api/update_user_details', formdata, {
 			// Attach the JWT header
 				headers: this.$auth.getAuthHeader()
-
 				})
-
 			.then((response) => {
 					// this.$router.push({path: '/profile', query: {alert: response.message}})
-					console.log(response)
+					var imageName = response.data.result.profile.image_url;
+					this.imgOutput = 'http://larapi.com/public/uploads/' + imageName;
 			},(response) => {
 				console.log('error callback')
 	       });
 		},
 		imgconsole: function() {
-			console.log(imageUrl);
+			// console.log(imageUrl);
 		}
 
 	},
@@ -135,8 +130,6 @@ export default {
 			this.$http.get(link)
 			.then(function(response) {
 				 this.results = response.data;
-				 console.log(this.results);
-
 			})
 	}
 
