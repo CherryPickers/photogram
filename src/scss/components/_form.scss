@@ -1,11 +1,8 @@
 //------FORMs login & register styles
 
 .form {
-    position: absolute;
-    left: 35%;
-    bottom: 10%;
-    width: 30%;
-    margin: 2rem auto;
+    max-width: 40%;
+    margin: 0 auto;
 
     &__input {
         display: block;

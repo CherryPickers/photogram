@@ -4,8 +4,14 @@
 		<div class="container">
 			<div class="profile__media tac">
 				<div class="media media--left">
-					<h2 class="profile__text" v-for="result in results">{{result.name}}</h2>
-					<img src="http://lorempixel.com/120/120/animals/1" alt="" class="media--left__img imgRound profile__img">
+					<h2 class="profile__text" v-for="result in results">{{result.username}}</h2>
+					<div v-if="!imgOutput" class="media">
+						<input type="file" name="image">
+						<img src="http://lorempixel.com/100/100" class="media--left__img imgRound profile__img"/>
+					</div>
+					<div v-else class="media">
+						<img :src="imgOutput" class="media--left__img imgRound profile__img"/>
+					</div>
 					<div class="subtitle media__title">
 						<p class="profile__info tal"><a href="#" class="link--green profile__link">105</a>posts</p>
 						<p class="profile__info tal"><a href="#" class="link--green profile__link">55</a>followers</p>
@@ -128,7 +134,8 @@
 export default {
 	data() {
 		return {
-			results: ''
+			results: '',
+			imgOutput: ''
 		}
 	},
 	created: function(){
@@ -138,6 +145,8 @@ export default {
 		this.$http.get(link)
 		.then(function(response) {
 			 this.results = response.data;
+			 var imageName = response.data.result.profile.image_url;
+			 this.imgOutput = 'http://larapi.com/public/uploads/' + imageName;
 		})
 	}
 
