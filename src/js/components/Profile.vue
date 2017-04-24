@@ -9,7 +9,7 @@
 						<input type="file" name="image">
 						<img src="http://lorempixel.com/100/100" class="media--left__img imgRound profile__img"/>
 					</div>
-					<div v-else class="media">
+					<div v-else class="profile__picture">
 						<img :src="imgOutput" class="media--left__img imgRound profile__img"/>
 					</div>
 					<div class="subtitle media__title">

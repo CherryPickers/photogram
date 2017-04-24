@@ -11,7 +11,7 @@
 							<input type="file" name="image">
 							<img src="http://lorempixel.com/100/100" class="media--left__img imgRound profile__img"/>
 						</div>
-						<div v-else class="media">
+						<div v-else class="profile__picture">
 							<img :src="imgOutput" class="media--left__img imgRound profile__img"/>
 						</div>
 						<!-- <p class="profile__text profile__text--smaller">Change Photo</p> -->
