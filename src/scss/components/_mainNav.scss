@@ -16,8 +16,12 @@
     }
 
     &__link {
+        display: inline-block;
         padding-right: 1rem;
         padding-left: 1.5rem;
+
+        vertical-align: middle;
+
         font-size: 1.4rem;
         text-transform: uppercase;
         text-decoration: none;
@@ -25,5 +29,10 @@
         &:hover {
             text-decoration: none;
         }
+    }
+
+    &__img img {
+        max-width: 3rem;
+        border-radius: 50%;
     }
 }
