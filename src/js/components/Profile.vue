@@ -6,7 +6,6 @@
 				<div class="media media--left">
 					<h2 class="profile__text" v-for="result in results">{{result.username}}</h2>
 					<div v-if="!imgOutput" class="media">
-						<input type="file" name="image">
 						<img src="http://lorempixel.com/100/100" class="media--left__img imgRound profile__img"/>
 					</div>
 					<div v-else class="profile__picture">
