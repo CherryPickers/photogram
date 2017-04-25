@@ -1,27 +1,28 @@
 //------REGISTER page
 
 .register {
-    padding: 10% 0;
+    padding: 5% 0;
 
-    &:after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        content: '';
-        width: 100%;
-        height: 100%;
-        opacity: 0.7;
-        z-index: -1;
-        background-image: url('/src/images/photoBg.jpeg');
-    	background-size: cover;
-    	background-position: center;
+    .form__input {
+        color: $colorBlack;
+        @include inputPlaceholder { color: $colorBlack; }
+        border-bottom: 1px solid $blackRussian;
     }
+
+	.form__forgot {
+		font-family: Roboto;
+		color: $blackRussian;
+
+	}
+
+	.form__link {
+		text-transform: initial;
+		font-weight: normal;
+	}
     
     &__logo {
         margin-bottom: 8rem;
 
-        font-size: 4.5rem;
+        font-size: 8rem;
     }
 }

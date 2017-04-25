@@ -13,17 +13,16 @@
 			<!--Reenter Password-->
 			<input type="password" name="reenteredPassword" placeholder="Confirm Password" v-model="register.reenteredPassword" v-validate="'required'" class="form__input">
 			<span v-show="fields.failed('password')" class="help is-danger">{{ errors.first('password') }}</span>
-			<!--Name-->
-			<input type="text" name="name" placeholder="Profile Name" v-model="register.name" class="form__input">
 			<!--Username-->
 			<input type="text" name="username" placeholder="Username" v-model="register.username" class="form__input">
 			<span class="help is-danger" v-text="register.errors"></span>
+
 			<!--  Static-->
-			<span class="form__forgot">Forgot Password?</span>
+			<span class="form__forgot">I accept the <router-link to="/terms-and-condition" class="form__link">Terms & Privacy Policy</router-link></span>
 			<button class="btn btn--green form__btn">Sign up</button>
 			<span class="form__forgot">Already have the account? <router-link to="/" class="form__link">LOG IN</router-link></span>
 			<br>
-			<span class="form__forgot">I accept the <router-link to="/terms-and-condition" class="form__link">Terms & Privacy Policy</router-link></span>
+		
 		</form>
 	</div>
 </div>

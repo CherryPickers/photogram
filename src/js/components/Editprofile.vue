@@ -3,7 +3,7 @@
 		<app-header></app-header>
         <div class="container tac">
 			<div class="profile__body">
-				<div class="form">
+				<div class="form form--editProfile">
 					<form id="editForm" enctype="multipart/for-data" @submit.prevent="updateForm">
 						<div class="profile__intro">
 		            	<p class="profile__text profile__text--smaller">Edit profile</p>

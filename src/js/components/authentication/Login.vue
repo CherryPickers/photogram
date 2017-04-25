@@ -19,7 +19,7 @@
 				<!--  Submit-->
 				<span class="form__forgot">Forgot Password?</span>
 				<button type="submit" class="btn btn--green form__btn">Log in</button>
-				<span>Don't have account? <router-link to="register" class="form__link">Sign up</router-link></span>
+				<span class="noAccount">Don't have account? <router-link to="register" class="form__link">Sign up</router-link></span>
 			</form>
 		</div>
 	</div>

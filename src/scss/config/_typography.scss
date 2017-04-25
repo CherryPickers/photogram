@@ -22,6 +22,8 @@
  @include fontFace (HelveticaNeue, HelveticaNeue, null, null, ttf otf);
  @include fontFace (HelveticaNeueThin, HelveticaNeue Thin, null, null, ttf);
  @include fontFace (HelveticaNeueLight, HelveticaNeue Light, null, null, ttf);
+ @include fontFace (Roboto, Roboto-Regular, null, null, ttf);
+  @include fontFace (Roboto-Bold, Roboto-Bold, null, null, ttf);
 
 //------FONT SIZES
 html {
@@ -42,4 +44,5 @@ html {
 body {
     font-size: 100%;
     font-family: $baseFont;
+    color: $blackRussian;
 }

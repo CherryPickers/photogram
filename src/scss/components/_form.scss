@@ -13,10 +13,11 @@
         margin: 2rem 0 0.8rem;
 
         border: none;
-        border-bottom: 1px solid rgb(149,152,154);
+        border-bottom: 1px solid $colorWhite;
         background-color: transparent;
 
-        font-size: 1.4rem;
+        font-family: Roboto;
+        font-size: 2rem;
         color: #fff;
 
         @include inputPlaceholder { color: white; }
@@ -30,16 +31,16 @@
     }
 
     &__btn {
-        padding: 0.5rem 0;
-
-        font-size: 1.3rem;
+        padding: 1rem 0;
     }
 
     &__forgot {
         display: block;
         margin-top: 2rem;
+        font-family: $baseFont--light;
+        font-size: 1.6rem;
         text-align: left;
-        color: #fff;
+        color: $colorWhite;
     }
 
     &__link {
@@ -51,5 +52,14 @@
     .is-danger {
         font-size: 1em;
         color: red;
+    }
+
+    &--editProfile {
+        max-width: 55%;
+        .form__input {
+            border-bottom: 1px solid $greyChateau;
+           
+        }
+
     }
 }
