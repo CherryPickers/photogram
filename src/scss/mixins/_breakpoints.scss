@@ -8,11 +8,20 @@
 */
 
 @mixin breakpoint($point) {
-    @if $point == desktop {//min-width: 1025px
+    @if $point == widescreen {
+        @media (max-width: $widescreen)                              { @content; }
+    }
+    @else if $point == desktop--Large {
+        @media (max-width: $desktop--Large)                              { @content; }
+    }
+    @else if $point == desktop {
         @media (min-width: $desktop)                              { @content; }
     }
-    @else if $point == tablet {//max-width: 1024px
+    @else if $point == tabletLandscape {//max-width: 1024px
         @media (max-width: $toDesktop)                            { @content; }
+    }
+    @else if $point == tablet {//max-width: 768px
+        @media (max-width: $tablet)                            { @content; }
     }
     @else if $point == phone {//max-width: 767px
         @media (max-width: $toTablet)                             { @content; }

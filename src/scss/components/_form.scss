@@ -62,4 +62,14 @@
         }
 
     }
+    input[type="file"] {
+        display: none;
+    }
+
+    .custom-fileUpload {
+        font-family: Roboto;
+        font-size: 2rem;
+        color: $blackRussian;
+        cursor: pointer;
+    }
 }

@@ -6,16 +6,25 @@
 				<div class="form form--editProfile">
 					<form id="editForm" enctype="multipart/for-data" @submit.prevent="updateForm">
 						<div class="profile__intro">
-		            	<p class="profile__text profile__text--smaller">Edit profile</p>
-						<div v-if="!imgOutput" class="media">
-							<input type="file" name="image">
-							<img src="http://lorempixel.com/100/100" class="media--left__img imgRound profile__img"/>
-						</div>
-						<div v-else class="profile__picture">
-							<img :src="imgOutput" class="media--left__img imgRound profile__img"/>
-						</div>
-						<!-- <p class="profile__text profile__text--smaller">Change Photo</p> -->
+			            	<p class="profile__text">Edit profile</p>
+							<div v-if="!imgOutput" class="media">
+								<label for="file-upload" class="custom-fileUpload">
+								    Change photo
+								</label>
+								<input id="file-upload" type="file" name="image"/>
+								<img src="http://lorempixel.com/100/100" class="media--left__img imgRound profile__img"/>
+							</div>
+							<div v-else class="profile__picture">
+								<div class="profile__picture__wrapper">
+									<img :src="imgOutput" class="media--left__img imgRound profile__img"/>
+								</div>
+								<label for="file-upload" class="custom-fileUpload">
+								    Change photo
+								</label>
+								<input id="file-upload" type="file" name="image"/>
+							</div>
 			            </div>
+			            
 						<input placeholder="Name" name="name" type="text" class="form__input form__input--colorBlack" value="">
 						<span class="help is-danger"></span>
 						<br>

@@ -2,22 +2,22 @@
 	<div class="profilePage">
 		<app-header></app-header>
 		<div class="container">
-			<div class="profile__media tac">
+			<div class="profile__media">
 				<div class="media media--left">
-					<h2 class="profile__text" v-for="result in results">{{result.username}}</h2>
+					<h2 class="profile__name" v-for="result in results">{{result.username}}</h2>
 					<div v-if="!imgOutput" class="media">
 						<img src="http://lorempixel.com/100/100" class="media--left__img imgRound profile__img"/>
 					</div>
-					<div v-else class="profile__picture">
+					<div v-else class="profile__picture__wrapper">
 						<img :src="imgOutput" class="media--left__img imgRound profile__img"/>
 					</div>
-					<div class="subtitle media__title">
+				</div>
+				<div class="profile__activity">
 						<p class="profile__info tal"><a href="#" class="link--green profile__link">105</a>posts</p>
 						<p class="profile__info tal"><a href="#" class="link--green profile__link">55</a>followers</p>
 						<p class="profile__info tal"><a href="#" class="link--green profile__link">15</a>following</p>
 					</div>
-				</div>
-				<p class="text profile__text">A person ready to share everything she has with the rest of the world. Enjoy my window to the world!</p>
+				<p class="profile__text">A person ready to share everything she has with the rest of the world. Enjoy my window to the world!</p>
 				<router-link to="edit-profile" class="btn btn--gray profile__btn">Edit profile</router-link>
 			</div>
 

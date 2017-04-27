@@ -29,15 +29,17 @@
 html {
     $fontSizePX: $baseFontSize + 'px';
     font-size  : #{$fontSizePX};
-
-    @include breakpoint(desktop) {
-        font-size: 0.6944444vw;// 10/1440*100
+    @include breakpoint(widescreen) {
+        font-size: 0.5208333333vw;// 10/1920*0.01
+    }
+    @include breakpoint(desktop--Large) {
+        font-size: 0.625vw;// 10/1600*0.01
+    }
+    @include breakpoint(tabletLandscape) {
+        font-size: 0.9765625vw;// 10/1024*0.01
     }
     @include breakpoint(tablet) {
-        font-size: 1.302083vw;// 10/768*100
-    }
-    @include breakpoint(phone) {
-        font-size: 1.3333333vw;// 10/750*100
+        font-size: 1.302083333;// 10/768*0.01
     }
 }
 

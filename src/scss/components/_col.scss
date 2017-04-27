@@ -12,7 +12,7 @@
     }
 
     &-tab-3 {
-        @include breakpoint(tablet) {
+        @include breakpoint(tabletLandscape) {
             display: inline-block;
             width: 33%;
             padding: 0 1rem;
