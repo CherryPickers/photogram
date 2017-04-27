@@ -28,14 +28,22 @@
 
     &__activity {
         display: inline-block;
+        margin-left: 3rem;
+        vertical-align: middle;
     }
 
     &__btn {
-        padding: 0.5rem 1.2rem;
+        display: block;
+        width: 13rem;
+        margin: 0 auto;
+        margin-top: 5rem;
         margin-bottom: 2rem;
-
-        font-size: 1.2rem;
+        padding: 0.5rem 1.2rem;
+        
+        font-family: Roboto;
+        font-size: 2rem;
         text-transform: capitalize;
+        text-align: center;
     }
 
     &__subtitle {

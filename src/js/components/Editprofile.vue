@@ -6,7 +6,7 @@
 				<div class="form form--editProfile">
 					<form id="editForm" enctype="multipart/for-data" @submit.prevent="updateForm">
 						<div class="profile__intro">
-			            	<p class="profile__text">Edit profile</p>
+			            	<p class="profile__name">Edit profile</p>
 							<div v-if="!imgOutput" class="media">
 								<label for="file-upload" class="custom-fileUpload">
 								    Change photo
