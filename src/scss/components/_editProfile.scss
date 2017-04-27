@@ -1,1 +1,11 @@
 //------EDIT PROFILE PAGE
+
+.form--editProfile {
+	.profile__name {
+		font-family: $baseFont--light;
+		font-size: 2.6rem;
+	}
+	.btn {
+		margin-top: 5rem;
+	}
+}
